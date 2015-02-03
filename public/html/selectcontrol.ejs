@@ -1,0 +1,126 @@
+<!-- 提供查询指定页面统计展现跳转页面，有时间可供选择 -->
+<!-- 此页面用的是bootstrap2.2.2，此版本支持时间datetimepicker插件 -->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>链接点击分析</title>
+		<link href="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet">
+		<link href="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+		<script src="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap-datetimepicker.min.css" />
+		<script type="text/javascript" src="/js/showiframe.js"></script>
+		<script type="text/javascript" src="/js/paging.js"></script>
+		<script type="text/javascript" src="/js/bootstrap-datetimepicker.min.js"></script>
+		<script type="text/javascript" src="/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<style>
+			.page .bttn{
+				width: 50px;
+				line-height: 26px;
+				text-align: center;
+			}
+			.page a {
+				text-align: center;
+				width: 14px;
+				text-decoration: none;
+				display: inline-block;
+				line-height: 26px;
+				padding: 2px 5px;
+				color: #333;
+				border: 1px solid #ccc;
+				margin: 0 2px;
+			}
+			.page a:hover,
+			.page a.on {
+				background: #D68BE2;;
+				color: #fff;
+				border: 1px solid #333;
+			}
+			.page a.unclick,
+			.page a.unclick:hover {
+				background: none;
+				border: 1px solid #eee;
+				color: #999;
+				cursor: default;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<div>
+			<h2 style="margin-top: 70px;margin-left: 40%;">URL数量统计表</h2>
+			
+			<div style="margin-top: 20px;margin-left: 7%;">
+			<div id="" style="float: left;margin-left: 100px;">
+				<div id="" style="float: left;margin-top: 15px;">
+					开始时间：
+				</div>
+				<div class="input-append date form_datetime1" style="margin-top: 10px;float: left;">
+					<input size="16" type="text" value="" readonly id="start">
+					<span class="add-on"><i class="icon-th"></i></span>
+				</div>
+				<script type="text/javascript">
+					$(".form_datetime1").datetimepicker({
+						format: "yyyy-mm-dd",
+						autoclose: true,
+						todayBtn: true,
+						startDate: "2013-02-14 "
+					});
+				</script>
+			</div>
+
+			<div id="" style="float: left;margin-left: 100px;">
+				<div id="" style="float: left;margin-top: 15px;">
+					结束时间：
+				</div>
+				<div class="input-append date form_datetime2" style="margin-top: 10px;float: left;">
+					<input size="16" type="text" value="" readonly id="end">
+					<span class="add-on"><i class="icon-th"></i></span>
+				</div>
+				<script type="text/javascript">
+					$(".form_datetime2").datetimepicker({
+						format: "yyyy-mm-dd",
+						autoclose: true,
+						todayBtn: true,
+						startDate: "2013-02-14 "
+					});
+				</script>
+			</div>
+			<button class="btn btn-primary" type="button" onclick="search()" style="margin-top: 10px;margin-left: 50px;">奇迹时刻</button>
+		</div>
+			
+			<table style="margin-top:40px;width: 990px;margin-left: 12%;" class="table table-hover">
+				<tr>
+					<th>源页面</th>
+					<th>链接</th>
+					<th>报表</th>
+				</tr>
+				<% try { data.forEach(function(item){ var source_url=item.source_url; source_url=source_url.replace(/\|/g, "/") %>
+					<tr>
+						<td>
+							<%=item.id%>
+						</td>
+						<td>
+							<a href="/index1?link=<%=source_url%>&id=<%=item.id%>" target="_blank">
+								<%=source_url%>
+							</a>
+						</td>
+						<td>-</td>
+					</tr>
+					<% })} catch(e){
+						
+					} %>
+			</table>
+			<div id="" style="margin-left: 45%;" class="pagination page">
+
+				<ul id="page">
+
+				</ul>
+
+			</div>
+		</div>
+	</body>
+</html>

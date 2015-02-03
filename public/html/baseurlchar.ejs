@@ -1,0 +1,109 @@
+<!--总报表显示模块-->
+<!-- 调用echarts-2.1.10插件  实现总报表数据展现功能 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>url统计展示</title>
+	</head>
+	<body>
+		<div id="main" style="height:500px;margin-top: 100px;"></div>
+		<script src="/echarts-2.1.10/build/dist/echarts.js"></script>
+		<script type="text/javascript">
+			 // 路径配置
+			require.config({
+				paths: {
+					echarts: '/echarts-2.1.10/build/dist'
+				}
+			});
+			 // 使用
+			require(
+				[
+					'echarts',
+					'echarts/chart/line',
+					'echarts/chart/bar', // 使用柱状图就加载bar模块，按需加载
+					'echarts/chart/scatter',
+					'echarts/chart/k',
+					'echarts/chart/pie',
+					'echarts/chart/radar',
+					'echarts/chart/force',
+					'echarts/chart/chord',
+					'echarts/chart/gauge',
+					'echarts/chart/funnel',
+					'echarts/chart/eventRiver'
+				],
+				function(ec) { 
+					// 基于准备好的dom，初始化echarts图表
+					var myChart = ec.init(document.getElementById('main'));
+
+					var option = {
+						title: {
+							text: 'url点击量统计',
+							subtext: ''
+						},
+						tooltip: {
+							trigger: 'axis'
+						},
+						legend: {
+							data: ['点击量']
+						},
+						toolbox: {
+							show: true,
+							feature: {
+								mark: {
+									show: true
+								},
+								dataView: {
+									show: true,
+									readOnly: false
+								},
+								magicType: {
+									show: true,
+									type: ['line', 'bar']
+								},
+								restore: {
+									show: true
+								},
+								saveAsImage: {
+									show: true
+								}
+							}
+						},
+						calculable: true,
+						xAxis: [{
+							type: 'category',
+							data: [ <% data.keys.forEach(function(item,index) { item = item.replace(/\|/g, "/") %> '<%=item%>'<%if(data.keys.length!=index){%>, <%}
+							}) %> ]
+						}],
+						yAxis: [{
+							type: 'value'
+						}],
+						series: [{
+							name: '点击量',
+							type: 'bar',
+							data: <%= values %> ,
+							markPoint: {
+								data: [{
+									type: 'max',
+									name: '最大值'
+								}, {
+									type: 'min',
+									name: '最小值'
+								}]
+							},
+							markLine: {
+								data: [{
+									type: 'average',
+									name: '平均值'
+								}]
+							}
+						}]
+					};
+					// 为echarts对象加载数据 
+					myChart.setOption(option);
+				}
+			);
+		</script>
+	</body>
+
+</html>

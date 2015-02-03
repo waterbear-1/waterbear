@@ -1,0 +1,78 @@
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for user_base
+-- ----------------------------
+DROP TABLE IF EXISTS `user_base`;
+CREATE TABLE `user_base` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `login_name` varchar(32) DEFAULT NULL,
+  `login_psw` varchar(64) DEFAULT NULL,
+  `name` varchar(32) DEFAULT NULL,
+  `phone` varchar(32) DEFAULT NULL,
+  `email` varchar(64) DEFAULT NULL,
+  `address` text,
+  `sex` varchar(12) DEFAULT NULL,
+  `created_time` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for user_record
+-- ----------------------------
+DROP TABLE IF EXISTS `user_record`;
+CREATE TABLE `user_record` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `login_name` varchar(32) DEFAULT NULL,
+  `ip` varchar(64) DEFAULT NULL,
+  `created_time` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for wb_url_base
+-- ----------------------------
+DROP TABLE IF EXISTS `wb_url_base`;
+CREATE TABLE `wb_url_base` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `source_url` varchar(1024) DEFAULT NULL,
+  `created_time` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for wb_url_date
+-- ----------------------------
+DROP TABLE IF EXISTS `wb_url_date`;
+CREATE TABLE `wb_url_date` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `url` varchar(512) DEFAULT NULL,
+  `count` int(11) DEFAULT NULL,
+  `page` varchar(64) DEFAULT NULL,
+  `record_time` datetime DEFAULT NULL,
+  `base_id` int(11) DEFAULT NULL,
+  `created_tiem` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `update_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for wb_url_record
+-- ----------------------------
+DROP TABLE IF EXISTS `wb_url_record`;
+CREATE TABLE `wb_url_record` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `source_url` varchar(1024) DEFAULT NULL,
+  `spm` varchar(32) DEFAULT NULL,
+  `index` int(11) DEFAULT NULL,
+  `created_time` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

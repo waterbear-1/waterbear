@@ -1,0 +1,22 @@
+{
+	"name": "bae-nodejs",
+	"version": "1.0.0",
+	"author": "bae",
+	"node-main": "server.js",
+	"description": "",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"dependencies": {
+		"express": "3.4.2",
+		"ejs": "0.8.4",
+		"jade": "0.35.0",
+		"cheerio": "0.16.0",
+		"request": "2.36.0",
+		"async": "*",
+		"bufferhelper": "0.2.0",
+		"iconv-lite": "0.4.4" , 
+		"mysql": "2.0.0-alpha9"
+	}
+}
+
