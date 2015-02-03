@@ -1,16 +1,15 @@
 var mysql = require('mysql');
-//填写数据库连接信息，可查询数据库详情页 
-var username = 'bae'; //API KEY
-var password = '6Zb66bSSBXBBEYTeWqBjYwRHjboWa05I'; //Secret KEY
-var db_host = 'svrid0r041bke62.mysql.duapp.com';
-var db_port = 10242;
-var db_name = 'svrid0r041bke62';
-var option = {
-		host: db_host,
-		port: db_port,
-		user: username,
-		password: password,
-		database: db_name
+
+var c = require('../../config/config')
+var m=eval("c.config."+c.config.config+".mysql")
+console.log(m) 
+//填写数据库连接信息，可查询数据库详情页  
+var moption = {
+		host: m.mysql.db_host,
+		port: m.mysql.db_port,
+		user: m.mysql.username,
+		password: m.mysql.password,
+		database: m.mysql.db_name
 	}
 	//连接数据库
 exports.saveUrl = selectUrl;
