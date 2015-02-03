@@ -2,18 +2,20 @@ exports.config = {
 	config:"develop", 
 	develop:{
 		mysql:{
-			host:"192.168.3.242",
-			port:3306,
-			user:"root",
-			psw:"123456"
+			username:"root",
+			password:"",
+			db_host:"192.168.3.242",
+			db_port:3306,
+			db_name:"zuaa"
 		}
-	},
+	}, 
 	product:{
 		mysql:{
-			host:"192.168.3.2421111",
-			port:33061,
-			user:"root1",
-			psw:"1234561"
+			username:"bae",
+			password:"6Zb66bSSBXBBEYTeWqBjYwRHjboWa05I",
+			db_host:"svrid0r041bke62.mysql.duapp.com",
+			db_port:10242,
+			db_name:"svrid0r041bke62"
 		}
 	}
 	
