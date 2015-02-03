@@ -1,8 +1,8 @@
-var UUID = require('uuid-js');
 
- 
-var uuid4 = UUID.create();
-console.log(uuid4.toString()); 
-console.log("=====================")
-var uuid1 = UUID.create(1);
-console.log(uuid1.toString());
+var c = require('../../../config/config') ;
+var uuid = eval("c.config." + c.config.config + ".uuid");
+var log = eval("c.config." + c.config.config + ".log");
+	
+	for(var i =0;i<100 ;i++){
+		log.info(uuid.toString());
+	}

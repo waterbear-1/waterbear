@@ -1,8 +1,8 @@
 var mysql = require('mysql');
 var crypto = require('crypto');
-var c = require('../../../config/config')
-	var m = eval("c.config." + c.config.config + ".mysql")
-	var log = eval("c.config." + c.config.config + ".log")
+var c = require('../../../config/config');
+	var m = eval("c.config." + c.config.config + ".mysql");
+	var log = eval("c.config." + c.config.config + ".log");
 	log.info(m);
 
 var option = {
@@ -19,7 +19,8 @@ exports.reg = reg;
 
 function reg(obj,cb){
 	openConn(function(client){
-		
+		//TODO 
+		log.info("reg:"+obj.user);
 	})
 }
 
@@ -34,7 +35,7 @@ function login(obj, cb) {
 	openConn(function(client){
 		log.info(obj.psw);
 		/* 这里增加一个sql语句，用于检查用户密码是否匹配 */
-		
+		//TODO 
 		client.query(
 			'select * from wb_url_base where ? ,?', [obj.user,obj.psw],
 			function(err, results) {
