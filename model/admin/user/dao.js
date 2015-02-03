@@ -17,8 +17,10 @@ exports.login = login;
 exports.reg = reg;
 
 
-function reg(){
-	
+function reg(obj,cb){
+	openConn(function(client){
+		
+	})
 }
 
 
