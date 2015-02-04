@@ -14,10 +14,10 @@
 		"cheerio": "0.16.0",
 		"request": "2.36.0",
 		"async": "*",
-		"bufferhelper": "0.2.0",
+		"bufferhelper": "0.2.0", 
 		"iconv-lite": "0.4.4" ,  
 		"mysql": "2.0.0-alpha9",
-		"log":"1.4.0"
+		"log":"1.4.0"  
 	}
 }
 

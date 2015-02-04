@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 var Log = require('log');
+=======
+var Log = require('log'); 
+>>>>>>> bcee28986ed3f2fd9f1266e69751faf2a61155a1
 exports.config = {
 	config:"develop", 
 	develop:{
@@ -9,7 +13,11 @@ exports.config = {
 			db_port:3306,
 			db_name:"zuaa"
 		},
+<<<<<<< HEAD
 		log:new Log('info')
+=======
+		log: new Log('info')
+>>>>>>> bcee28986ed3f2fd9f1266e69751faf2a61155a1
 	}, 
 	product:{
 		mysql:{
@@ -19,6 +27,12 @@ exports.config = {
 			db_port:10242,
 			db_name:"svrid0r041bke62"
 		},
+<<<<<<< HEAD
 		log:new Log('error')
 	}  
+=======
+		log: new Log('error')
+	}
+	
+>>>>>>> bcee28986ed3f2fd9f1266e69751faf2a61155a1
 }
