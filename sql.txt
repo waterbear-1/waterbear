@@ -76,3 +76,11 @@ CREATE TABLE `wb_url_record` (
   `created_time` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+=========================
+
+
+insert into `user_base` (`login_name`,`login_psw`,`name`,`phone`,`email`,`address`,`sex`)
+values( 'admin','admin','name','','','','')
