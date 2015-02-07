@@ -83,4 +83,5 @@ CREATE TABLE `wb_url_record` (
 
 
 insert into `user_base` (`login_name`,`login_psw`,`name`,`phone`,`email`,`address`,`sex`)
-values( 'admin','admin','name','','','','')
+values( 'admin','80854997d170141ae67a636f57d9004c','name','','','','')
+---md5("admin")=80854997d170141ae67a636f57d9004c    have salt
