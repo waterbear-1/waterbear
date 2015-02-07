@@ -3,11 +3,11 @@ exports.config = {
 	config:"develop", 
 	develop:{
 		mysql:{
-			username:"root",
-			password:"123456",
-			db_host:"192.168.3.242",
+			username:"r0d89875v0x60v3n",
+			password:"r0d89875v0x60v3nr0d89875v0x60v3n",
+			db_host:"rdsibnqfiuvf2az.mysql.rds.aliyuncs.com",
 			db_port:3306,
-			db_name:"zuaa"
+			db_name:"r0d89875v0x60v3m"
 		},
 		log:new Log('info')
 	}, 
