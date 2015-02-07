@@ -23,7 +23,7 @@ app.configure(function() {
 	app.use(express.errorHandler());
 });
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'html')));
+app.use(express.static(path.join(__dirname, 'manager')));
 app.use(express.cookieParser('waterbearcookie'));
 app.use(express.session({
 	cookie: {
