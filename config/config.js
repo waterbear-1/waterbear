@@ -9,7 +9,7 @@ exports.config = {
 			db_port:3306,
 			db_name:"r0d89875v0x60v3m"
 		},
-		log:new Log('info')
+		log:new Log('debug')
 	}, 
 	product:{
 		mysql:{
