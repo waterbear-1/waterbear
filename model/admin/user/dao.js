@@ -3,7 +3,7 @@ var crypto = require('crypto');
 var c = require('../../../config/config');
 var m = eval("c.config." + c.config.config + ".mysql");
 var log = eval("c.config." + c.config.config + ".log");
-log.debug(m);
+log.debug("i am user dao",m);
 
 var option = {
 	host: m.db_host,
